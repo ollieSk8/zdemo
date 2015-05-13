@@ -2,7 +2,7 @@
 <html lang="z-CH">
 <head>
 	<meta charset="UTF-8">
-	<title>快来人呐！又死人啦！！！</title>
+	<title>快来人呐！又死人啦！！！C市已经连续发生4起强奸杀人案，下一个被害者会是谁？人心惶惶，等你破案！</title>
 	<meta name="keywords" content="心理罪,爱奇艺,电视剧">
 	<meta name="description" content=" C市已经连续发生4起强奸杀人案，下一个被害者会是谁？人心惶惶，等你破案！">
 	<meta name="apple-touch-fullscreen" content="yes">
@@ -63,9 +63,21 @@
 			</div>
 		</div>
 	</div>
+	 <audio src="keluodiya.mp3" autoplay="autoplay" loop="loop" id="audio"></audio>
 	<script type="text/javascript">
 	window.onload=function(){
 		$('.loading-bg').hide();
+		var play_icon=$('.play_icon');
+		var audio=$('#audio');
+		play_icon.tap(function(){
+			if($(this).attr('class')=='play_icon'){
+				$(this).attr('class','play_icon play_icon_close');
+				audio[0].pause();
+			}else{
+				$(this).attr('class','play_icon');
+				audio[0].play();
+			}
+		});
 	}
 	</script>
 	<!-- 页面开始 -->
@@ -176,7 +188,7 @@
             </div>
         </div>
     </div>
-    <audio src="keluodiya.mp3" autoplay loop id="audio"></audio>
+   
     <!-- 页面结束 -->
     <script>
     	//实体脚本开始
@@ -258,34 +270,16 @@
 		  				share_layer.find('.help-layer').removeClass('animated slideInUp');
 		  			});
 		  		},
-		  		music_contarl:function(){
-		  			var play_icon=$('.play_icon');
-		  			var audio=$('#audio');
-		  			play_icon.tap(function(){
-		  				if($(this).attr('class')=='play_icon'){
-		  					$(this).attr('class','play_icon play_icon_close');
-		  					audio[0].pause();
-		  				}else{
-		  					$(this).attr('class','play_icon');
-		  					audio[0].play();
-		  				}
-		  			});
-		  			
-		  		}
+		  		
 		  	}
 		  	project.inint();
 		  	project.zjClick();
 		  	project.helpClick();
-		  	project.music_contarl();
+		  	
 		});
     </script>
     <!-- 微信相关 -->
-	<script>
-	var PageInfo = PageInfo || {};
-	PageInfo.desc = "快来人呐！又死人啦！！！";
-	PageInfo.weixin_share_icon = "images/xinlizui_share_cover.jpg";
-	</script>
-	<script type="text/javascript" src="http://static.qiyi.com/js/common/weixin20141224.js"></script>
+    <script type="text/javascript" src="dist/js/weChatApi.js"></script>
 	<!-- 微信相关 end-->
 	<!-- 统计 -->
 	<script type="text/javascript">
